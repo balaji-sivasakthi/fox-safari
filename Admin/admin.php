@@ -11,9 +11,12 @@
  <main>
 
     <div class="container">
+        <h1>Admin Panel</h1>
     <form action="<?php echo($_SERVER['PHP_SELF'])?>" method="post">
     
-
+            <input type="text" placeholder="User Name" name="user" id="user">
+            <input type="password" placeholder="Password" name="pass" id="pass">
+            <input type="submit" value="Login">
 
         </form>
     </div>
