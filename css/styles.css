@@ -2495,14 +2495,38 @@ a:hover.back-to-top {
 
 
 
-.tour{
+.big-tour-card{
 	margin: 10px;
 
 	height: 400px;
 	background-color: wheat;
 }
-.tour:hover{
+.big-tour-card:hover{
 	border-radius: 0;
 	box-shadow: #153e52 0 0 10px;
 	transition-duration: .4s;
 }
+
+.small-tour-card{
+	margin: 10px;
+
+	height: 500px;
+	background-color: #153e52;
+}
+.small-tour-card:hover{
+	border-radius: 0;
+	box-shadow: #153e52 0 0 10px;
+	transition-duration: .4s;
+}
+
+.dis{
+color: white;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+.dis >h1,h2,h3,h4,h6,h5{
+	color: white;
+}
+
+
