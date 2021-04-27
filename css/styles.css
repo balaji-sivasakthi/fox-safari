@@ -1,5 +1,5 @@
 /* Template: Latrosoft - Business HTML Landing Page Template
-   Author: Inovatik
+   Author: https://latrosoft.tech
    Created: Jul 2019
    Description: Master CSS file
 */
@@ -2452,7 +2452,9 @@ a:hover.back-to-top {
 
 /* Custom*/
 .social-box{
-	color: wheat;
+	margin: 10px;
+	margin-left: 5px;
+	color: white;
 	padding: 10px;
 	width: 100px;
 	height: 10px;
@@ -2471,8 +2473,13 @@ a:hover.back-to-top {
 
 @media (max-width:767px) {
 
+	
 	.social-box{
+
 		border-width: 0;
+	}
+	.social-box{
+		background-color: transparent;
 	}
 	.social-box span{
 		text-transform: uppercase;

@@ -1,5 +1,5 @@
 /* Template: Latrosoft - Business HTML Landing Page Template
-   Author: Inovatik
+   Author: https://latrosoft.tech
    Created: Jul 2019
    Description: Custom JS file
 */
