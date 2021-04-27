@@ -18,7 +18,7 @@ Table Of Contents:
 09. Details 2
 10. Testimonials
 11. Call Me
-12. Projects
+12. Gallery
 13. Project Lightboxes
 14. Team
 15. About
@@ -1309,7 +1309,7 @@ input[type='checkbox'] {
 
 
 /************************/
-/*     12. Projects     */
+/*     12. Gallery     */
 /************************/
 .filter {
 	padding-top: 6.5rem;
@@ -1972,7 +1972,7 @@ a:hover.back-to-top {
 	/* end of testimonials */
 
 
-	/* Projects */
+	/* Gallery */
 	.filter .element-item { 
 		width: 25%; 
 	}
@@ -1985,7 +1985,7 @@ a:hover.back-to-top {
 	.filter .element-item:hover .element-item-overlay {
 		opacity: 1;
 	}
-	/* end of projects */
+	/* end of Gallery */
 
 
 	/* About */
@@ -2357,7 +2357,7 @@ a:hover.back-to-top {
 	/* end of call me */
 
 
-	/* Projects */
+	/* Gallery */
 	.filter .element-item {
 		width: 17.3125rem; /* to eliminate grid overflow problem on hard refresh */
 		height: 16.875rem;
@@ -2366,7 +2366,7 @@ a:hover.back-to-top {
 	.filter .element-item .element-item-overlay span { 
 		top: 45%;
 	}
-	/* end of projects */
+	/* end of Gallery */
 
 
 	/* Team */
