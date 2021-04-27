@@ -2492,3 +2492,17 @@ a:hover.back-to-top {
 	}
 	
 }
+
+
+
+.tour{
+	margin: 10px;
+
+	height: 400px;
+	background-color: wheat;
+}
+.tour:hover{
+	border-radius: 0;
+	box-shadow: #153e52 0 0 10px;
+	transition-duration: .4s;
+}
