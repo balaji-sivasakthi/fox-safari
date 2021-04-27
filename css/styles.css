@@ -2469,7 +2469,12 @@ a:hover.back-to-top {
 	background-color: #025e48;
 	
 }
-
+.form-group{
+	margin-top: 2px;
+}
+.red{
+	color: red;
+}
 
 @media (max-width:767px) {
 
@@ -2485,4 +2490,5 @@ a:hover.back-to-top {
 		text-transform: uppercase;
 		color: #06f3bc !important;
 	}
+	
 }
