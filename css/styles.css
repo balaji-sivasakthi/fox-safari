@@ -675,16 +675,16 @@ input[type='checkbox'] {
 
 .navbar-custom .nav-item .nav-link {
 	padding: 0.625rem 0.75rem 0.625rem 0.75rem;
-	color: #fff;
+	color: #14bf98;
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
 
 .navbar-custom .nav-item .nav-link:hover,
 .navbar-custom .nav-item .nav-link.active {
-	color: #14bf98;
-}
+	color: #06f3bc;
 
+}
 /* Dropdown Menu */
 .navbar-custom .dropdown:hover > .dropdown-menu {
 	display: block; /* this makes the dropdown menu stay open while hovering it */
@@ -772,7 +772,7 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .7)), url('../images/header-background.jpg') center center no-repeat;
 	background-size: cover;
 }
 
@@ -2438,6 +2438,8 @@ a:hover.back-to-top {
 		padding-left: 12rem;
 	}
 
+	
+
 	.navbar-custom.top-nav-collapse {
 		padding-right: 12rem;
 		padding-left: 12rem;
@@ -2445,3 +2447,35 @@ a:hover.back-to-top {
 	/* end of navigation */
 }
 /* end of min-width width 1200px */
+
+
+
+/* Custom*/
+.social-box{
+	color: wheat;
+	padding: 10px;
+	width: 100px;
+	height: 10px;
+	background-color: transparent;
+	border: 1px #06f3bc solid;
+}
+.social-a{
+	text-decoration: none;
+}
+.social-box:hover{
+	text-decoration: none;
+	background-color: #025e48;
+	
+}
+
+
+@media (max-width:767px) {
+
+	.social-box{
+		border-width: 0;
+	}
+	.social-box span{
+		text-transform: uppercase;
+		color: #06f3bc !important;
+	}
+}
