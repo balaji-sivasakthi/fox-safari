@@ -14,7 +14,7 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Email Already Taken. Please Try Another one.";
         $_SESSION['status_code'] = "error";
-        //header('Location: register.php');  
+        header('Location: register.php');  
     }
     else
     {
