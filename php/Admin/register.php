@@ -2,10 +2,34 @@
 <?php include('./includes/navbar.php') ?>
 
 <?php
-include('security.php');
+include('./security.php');
 ?>
 
-<div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+<!-- Main Content -->
+            <div id="content">
+
+               
+<?php include('./includes/top-bar.php');?>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Add Admin</h1>
+                    </div>
+
+                    <div class="row">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
+                              Add Admin User
+                        </button>
+                       
+                        <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -48,9 +72,26 @@ include('security.php');
   </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-       Add Admin Profile 
-</button>
+
+
+
+
+
+
+          </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+
+
+
+
+
+
 
 <?php include('./includes/scripts.php')?>
 <?php include('./includes/footer.php')?>
