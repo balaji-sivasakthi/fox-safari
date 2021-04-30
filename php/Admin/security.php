@@ -1,5 +1,5 @@
 <?php
-//session_start();
+
 include('./Database/dbconfig.php');
 
 if($connection)
