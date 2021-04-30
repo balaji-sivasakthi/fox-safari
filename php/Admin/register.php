@@ -23,7 +23,7 @@ include('./security.php');
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h4 ml-2 mb-0 text-gray-800">Add Admin</h1>
                     </div>
-
+<h1><?php echo($_SESSION['status']);?></h1>
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
                               Add Admin User
@@ -76,10 +76,15 @@ include('./security.php');
 
 
  <!-- Fox Admin  -->
+ <h1><?php
+ 
+ echo $_SESSION['status'];
+ ?></h1>
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
                         </div>
+                       
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -94,6 +99,16 @@ include('./security.php');
                                         </tr>
                                     </thead>
                                    
+                                   
+                                   <?php
+                                   
+                                   
+                                   
+                                   ?>
+
+
+
+
                                     <tbody>
                                         <tr>
                                             <td>Balaji</td>
