@@ -1,5 +1,7 @@
 body
 {
+  margin-top: 100px;
+  padding: 0px 300px;
   background-color:#141019;
 /*  background-image: url(bg.jpg);*/
   background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
