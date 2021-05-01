@@ -8,6 +8,3 @@
 
 
 
-ok va
-ok done
-hmm ok nee try pannu  edha follow p nee appudiyeiiru pannurathu coreect ta paaruhm eppadi scroll panna
