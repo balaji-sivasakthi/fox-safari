@@ -2509,7 +2509,6 @@ a:hover.back-to-top {
 
 .small-tour-card{
 	margin: 10px;
-
 	height: 500px;
 	background-color: #153e52;
 }
@@ -2518,8 +2517,10 @@ a:hover.back-to-top {
 	box-shadow: #153e52 0 0 10px;
 	transition-duration: .4s;
 }
-
-.small-tour .disc{
+.small-tour-card h2, h3, h4,h5,h6{
+	color: white;
+}
+.small-tour-card .disc{
 	color: white;
 	padding: 20px;
 	width: 100%;
