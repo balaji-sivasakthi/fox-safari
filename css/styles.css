@@ -2517,9 +2517,26 @@ a:hover.back-to-top {
 	box-shadow: #153e52 0 0 10px;
 	transition-duration: .4s;
 }
-.small-tour-card h2, h3, h4,h5,h6{
+.small-tour-card h1{
 	color: white;
 }
+.small-tour-card h2{
+	color: white;
+}
+.small-tour-card h3{
+	color: white;
+}
+.small-tour-card h4{
+	color: white;
+}
+.small-tour-card h5{
+	color: white;
+}
+.small-tour-card h6{
+	color: white;
+}
+
+
 .small-tour-card .disc{
 	color: white;
 	padding: 20px;
