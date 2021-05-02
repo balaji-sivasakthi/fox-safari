@@ -1,11 +1,7 @@
 <?php
-<<<<<<< HEAD
-=======
-/*session_start();*/
->>>>>>> 26db72ca1f90c49136af46aed53c4eb60e64959c
-include('security.php');
-
+include('./security.php');
 //  Admin Registration
+
 if(isset($_POST['registerbtn']))
 {
     $username = $_POST['username'];

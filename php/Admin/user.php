@@ -1,6 +1,8 @@
-<?php include('./includes/header.php')?>
-<?php include('./includes/navbar.php')?>
-
+<?php include('./security.php');
+      include('./includes/header.php');
+      include('./includes/navbar.php');
+      include('./Database/dbconfig.php');
+?>
    <!-- Content Wrapper -->
    <div id="content-wrapper" class="d-flex flex-column">
 
@@ -17,15 +19,21 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h4 ml-2 mb-0 text-gray-800">Add Users</h1>
                     </div>
-                           <?php
-                            if (isset($_SESSION['status-code'])){
-                                echo $_SESSION['status-code'];
-                            }
-                            if (isset($_SESSION['status'])){
+                    <?php
+                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
                                 echo $_SESSION['status'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                               
+                            }
+                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
+                                echo $_SESSION['status-code'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                                
                             }
                            
-                           ?>
+                        ?>
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
                               Add User
@@ -75,7 +83,12 @@
   </div>
 </div>
 
+<?php
 
+$tq="SELECT * FROM user";
+$tr = mysqli_query($connection,$tq);
+
+?>
 
  <!-- Fox Admin  -->
  <div class="card shadow mt-5 mb-4">
@@ -97,34 +110,37 @@
                                         </tr>
                                     </thead>
                                    
-                                   
-                                   <?php
-                                   
-                                   
-                                   
-                                   ?>
-
-
-
-
                                     <tbody>
-                                        <tr>
-                                            <td>Balaji</td>
-                                            <td>balajisivasakthi7772@gmail.com</td>
-                                            <td>9787267429</td>
-                                            <td>1234</td>
-                                            <th><button class="btn btn-primary" type="submit">Edit</button></th>
-                                            <th><button class="btn btn-danger" type="submit">Delete</button></th>
-                                        </tr>
-                                        <tr>
-                                            <td>Bala</td>
-                                            <td>balajis08.cseasnsct@gmail.com</td>
-                                            <td>9626666685</td>
-                                            <td>1234</td>
-                                            <th><button class="btn btn-primary" type="submit">Edit</button></th>
-                                            <th><button class="btn btn-danger" type="submit">Delete</button></th>
-                                        </tr>
-                                        </tr>
+                                   <?php
+                                       
+                                        if(mysqli_num_rows($tr)>0)
+                                        {
+
+                                            while($row = mysqli_fetch_assoc($tr))
+                                            {
+                                               ?>
+
+
+                                            
+
+                                            <tr>
+                                                <td><?php echo($row['name']);?></td>
+                                                <td><?php echo($row['phone']);?></td>
+                                                <td><?php echo($row['email']);?></td>
+                                                <td><?php echo($row['password']);?></td>
+                                                <td><button class="btn btn-primary">Edit</button></td>
+                                                <td><button class="btn btn-danger">Delete</button></td>
+                                            </tr>
+
+
+                                            <?php 
+                                            }
+
+                                        }
+                                        else{
+                                            echo ("No record Fund");
+                                        }
+                                        ?>
                                     </tbody>
                                     
                                 </table>
