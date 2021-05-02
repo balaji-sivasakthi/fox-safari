@@ -1,10 +1,12 @@
 body
 {
-  margin-top: 100px;
-  padding: 0px 300px;
+  overflow:none ;
+    margin-top: 200px;
+    padding: 0px 400px;
   background-color:#141019;
-/*  background-image: url(bg.jpg);*/
-  background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
+ 
+ 
+ 
 }
 
 
@@ -50,4 +52,11 @@ body
 @keyframes swinghair {
     0% { transform: rotate(6deg); }
     100% { transform: rotate(-6deg); }
+}
+
+@media (min-width:600px) {
+  .body{
+   
+  }
+ 
 }
