@@ -1,5 +1,4 @@
 <?php
-
 include('./Database/dbconfig.php');
 
 if($connection)

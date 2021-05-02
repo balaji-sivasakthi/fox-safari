@@ -1,9 +1,8 @@
 <?php include('./includes/header.php') ?>
 <?php include('./includes/navbar.php') ?>
 
-<?php
-include('./security.php');
-?>
+
+
 
 
 
@@ -23,10 +22,16 @@ include('./security.php');
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h4 ml-2 mb-0 text-gray-800">Add Admin</h1>
                     </div>
-<h1><?php echo($_SESSION['status']);?></h1>
+                    <?php
+                            if (isset($_SESSION['status-code'])){
+                                echo $_SESSION['status-code'];
+                            }
+                            if (isset($_SESSION['status'])){
+                                echo $_SESSION['status'];
+                            }?>
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                              Add Admin User
+                              Add Admin
                         </button>
                      </div>
 
@@ -76,10 +81,6 @@ include('./security.php');
 
 
  <!-- Fox Admin  -->
- <h1><?php
- 
- echo $_SESSION['status'];
- ?></h1>
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
