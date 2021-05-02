@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 session_start();
 $server_name = "localhost:3308";
+=======
+
+$server_name = "localhost";
+>>>>>>> 26db72ca1f90c49136af46aed53c4eb60e64959c
 $db_username = "root";
 $db_password = "";
 $db_name = "foxsafari";
