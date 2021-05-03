@@ -60,10 +60,9 @@ if(isset($_POST['registerUserBtn'])){
     $password=$_POST['password'];
     $cpassword=$_POST['confirmpassword'];
 
-    $email_query = "SELECT email FROM users WHERE email ='$email'";
+    $email_query = "SELECT * FROM user WHERE email ='$email'";
     $email_run= mysqli_query($connection,$email_query);
-    if(mysqli_num_rows($email_run)>0){
-        
+    if(mysqli_num_rows($email_run)>0){    
         $_SESSION['status']="Email Already Taken. Please Try Another one.";
         $_SESSION['status_code']="error";
         header("Location:/user.php");
@@ -72,13 +71,13 @@ if(isset($_POST['registerUserBtn'])){
 
         if($password===$cpassword){
 
-            $insert_query="INSERT INTO user  (name,phone,email,password) VALUES('$user','$email','$phone','$email','$password')";
+            $insert_query="INSERT INTO user  (name,phone,email,password) VALUES('$user','$phone','$email','$password')";
             $insert_run=mysqli_query($connection,$insert_query);
 
             if($insert_run){
                
                 $_SESSION['status']="User Record Added Sucessfully";
-                $_SESSION['status_code']="Sucess";
+                $_SESSION['status_code']="Success";
                 header("location: ./user.php");
 
 

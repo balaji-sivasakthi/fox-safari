@@ -63,6 +63,11 @@
                 <small class="error_email" style="color: red;"></small>
             </div>
             <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
+                <small class="error_phone" style="color: red;"></small>
+            </div>    
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" placeholder="Enter Password">
             </div>
@@ -93,7 +98,7 @@ $tr = mysqli_query($connection,$tq);
  <!-- Fox Admin  -->
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Fox user</h6>
                         </div>
                        
                         <div class="card-body">
