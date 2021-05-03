@@ -1,6 +1,9 @@
 <?php
 include('./security.php');
 //  Admin Registration
+$username = $password = $confirm_password = $phone = $name = $email = "";
+$username_err = $password_err = $confirm_password_err = $phone_err = $name_err = $email_err = "";
+
 
 if(isset($_POST['registerbtn']))
 {
@@ -8,6 +11,7 @@ if(isset($_POST['registerbtn']))
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
+    $hash_password=md5($password);
 
     $email_query = "SELECT * FROM admin WHERE email='$email' ";
     $email_query_run = mysqli_query($connection, $email_query);
@@ -17,11 +21,11 @@ if(isset($_POST['registerbtn']))
         $_SESSION['status_code'] = "error";
         header('Location: admin.php');  
     }
-    else
+    elseif
     {
         if($password === $cpassword)
         {
-            $query = "INSERT INTO admin (user,pass,email) VALUES ('$username','$password','$email')";
+            $query = "INSERT INTO admin (user,pass,email) VALUES ('$username','$hash_password','$email')";
             $query_run = mysqli_query($connection, $query);
             
             if($query_run)
@@ -59,6 +63,7 @@ if(isset($_POST['registerUserBtn'])){
     $phone=$_POST['phone'];
     $password=$_POST['password'];
     $cpassword=$_POST['confirmpassword'];
+    $hash_password=md5($password);
 
     $email_query = "SELECT * FROM user WHERE email ='$email'";
     $email_run= mysqli_query($connection,$email_query);
@@ -71,7 +76,7 @@ if(isset($_POST['registerUserBtn'])){
 
         if($password===$cpassword){
 
-            $insert_query="INSERT INTO user  (name,phone,email,password) VALUES('$user','$phone','$email','$password')";
+            $insert_query="INSERT INTO user  (name,phone,email,password) VALUES('$user','$phone','$email','$hash_password')";
             $insert_run=mysqli_query($connection,$insert_query);
 
             if($insert_run){
