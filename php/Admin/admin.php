@@ -1,6 +1,9 @@
-<?php include('./security.php')?>
-<?php include('./includes/header.php') ?>
-<?php include('./includes/navbar.php') ?>
+<?php session_start();?>
+
+<?php 
+include('./security.php');
+include('./includes/header.php'); ?>
+<?php include('./includes/navbar.php');?>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 

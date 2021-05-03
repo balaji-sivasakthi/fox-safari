@@ -1,5 +1,7 @@
 <?php
+session_start();
 include('./security.php');
+
 //  Admin Registration
 
 if(isset($_POST['registerbtn']))
@@ -100,9 +102,20 @@ if(isset($_POST['registerUserBtn'])){
 
 }
 
+// User Edit 
+
+if(isset($_POST['userEditBtn']))
+{
+    $edit_id = $_POST['editid'];
+    $equery="SELECT * FROM user WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+
+
+}
 
 
 
+// User Delete
 ?>
 
 
