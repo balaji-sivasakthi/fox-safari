@@ -1,4 +1,5 @@
-<?php include('./security.php');
+<?php session_start();
+    include('./security.php');
       include('./includes/header.php');
       include('./includes/navbar.php');
       include('./Database/dbconfig.php');
@@ -133,7 +134,12 @@ $tr = mysqli_query($connection,$tq);
                                                 <td><?php echo($row['phone']);?></td>
                                                 <td><?php echo($row['email']);?></td>
                                                 <td><?php echo($row['password']);?></td>
-                                                <td><button class="btn btn-primary">Edit</button></td>
+                                                <td>
+                                                    <form action="edit_user.php" method="post">
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
+                                                    <button type="submit" name="userEditBtn" class="btn btn-primary">Edit</button>
+                                                    </form>
+                                                </td>
                                                 <td><button class="btn btn-danger">Delete</button></td>
                                             </tr>
 
