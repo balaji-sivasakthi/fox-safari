@@ -20,21 +20,7 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h4 ml-2 mb-0 text-gray-800">Add Users</h1>
                     </div>
-                    <?php
-                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
-                                echo $_SESSION['status'];
-                                $_SESSION['status']='';
-                                session_destroy();
-                               
-                            }
-                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
-                                echo $_SESSION['status-code'];
-                                $_SESSION['status']='';
-                                session_destroy();
-                                
-                            }
-                           
-                        ?>
+                   
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
                               Add User
@@ -96,6 +82,7 @@ $tr = mysqli_query($connection,$tq);
 
 ?>
 
+
  <!-- Fox Admin  -->
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
@@ -104,12 +91,39 @@ $tr = mysqli_query($connection,$tq);
                        
                         <div class="card-body">
                             <div class="table-responsive">
+                            <?php
+                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
+                                ?>
+                                <p style="color: green;">
+                                <?php
+                                echo $_SESSION['status'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                               ?>
+                               </p>
+                               <?php
+                            }
+                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
+                                ?>
+                                <p style="color: green;">
+                                <?php
+                                echo $_SESSION['status-code'];
+                                $_SESSION['status-code']='';
+                                session_destroy();
+                               ?>
+                               </p>
+                               <?php
+                                
+                            }
+                           
+                        ?>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
+                                    
                                         <tr>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Email</th>
                                             <th>Encrypted Password</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -140,7 +154,12 @@ $tr = mysqli_query($connection,$tq);
                                                     <button type="submit" name="userEditBtn" class="btn btn-primary">Edit</button>
                                                     </form>
                                                 </td>
-                                                <td><button class="btn btn-danger">Delete</button></td>
+                                                <td>
+                                                <form action="code.php" method="post">
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
+                                                    <button type="submit" name="userDeleteBtn" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
 
 
@@ -149,7 +168,7 @@ $tr = mysqli_query($connection,$tq);
 
                                         }
                                         else{
-                                            echo ("No record Fund");
+                                          echo ("<p>No record Found</p>");
                                         }
                                         ?>
                                     </tbody>
