@@ -56,25 +56,25 @@
 
             <div class="form-group">
                 <label> Username </label>
-                <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control checking_email" placeholder="Enter Email">
+                <input type="email" name="email" class="form-control checking_email" placeholder="Enter Email" required>
                 <small class="error_email" style="color: red;"></small>
             </div>
             <div class="form-group">
                 <label>Phone number</label>
-                <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
+                <input type="tel" name="phone" class="form-control" placeholder="Enter phone number" required>
                 <small class="error_phone" style="color: red;"></small>
             </div>    
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
             </div>
 
 
@@ -110,7 +110,7 @@ $tr = mysqli_query($connection,$tq);
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Password</th>
+                                            <th>Encrypted Password</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
