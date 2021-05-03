@@ -1,14 +1,10 @@
-<?php include('./includes/header.php') ?>
-<?php include('./includes/navbar.php') ?>
-
-<?php
-include('./security.php');
+<?php include('./security.php');
+      include('./includes/header.php');
+      include('./includes/navbar.php');
+      include('./Database/dbconfig.php');
 ?>
-
-
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+   <!-- Content Wrapper -->
+   <div id="content-wrapper" class="d-flex flex-column">
 
 <!-- Main Content -->
             <div id="content">
@@ -21,12 +17,26 @@ include('./security.php');
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h4 ml-2 mb-0 text-gray-800">Add Admin</h1>
+                        <h1 class="h4 ml-2 mb-0 text-gray-800">Add Users</h1>
                     </div>
-<h1><?php echo($_SESSION['status']);?></h1>
+                    <?php
+                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
+                                echo $_SESSION['status'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                               
+                            }
+                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
+                                echo $_SESSION['status-code'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                                
+                            }
+                           
+                        ?>
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                              Add Admin User
+                              Add User
                         </button>
                      </div>
 
@@ -65,7 +75,7 @@ include('./security.php');
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="submit" name="registerUserBtn" class="btn btn-primary">Save</button>
         </div>
       </form>
 
@@ -73,13 +83,14 @@ include('./security.php');
   </div>
 </div>
 
+<?php
 
+$tq="SELECT * FROM user";
+$tr = mysqli_query($connection,$tq);
+
+?>
 
  <!-- Fox Admin  -->
- <h1><?php
- 
- echo $_SESSION['status'];
- ?></h1>
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
@@ -99,34 +110,37 @@ include('./security.php');
                                         </tr>
                                     </thead>
                                    
-                                   
-                                   <?php
-                                   
-                                   
-                                   
-                                   ?>
-
-
-
-
                                     <tbody>
-                                        <tr>
-                                            <td>Balaji</td>
-                                            <td>balajisivasakthi7772@gmail.com</td>
-                                            <td>9787267429</td>
-                                            <td>1234</td>
-                                            <th><button class="btn btn-primary" type="submit">Edit</button></th>
-                                            <th><button class="btn btn-danger" type="submit">Delete</button></th>
-                                        </tr>
-                                        <tr>
-                                            <td>Bala</td>
-                                            <td>balajis08.cseasnsct@gmail.com</td>
-                                            <td>9626666685</td>
-                                            <td>1234</td>
-                                            <th><button class="btn btn-primary" type="submit">Edit</button></th>
-                                            <th><button class="btn btn-danger" type="submit">Delete</button></th>
-                                        </tr>
-                                        </tr>
+                                   <?php
+                                       
+                                        if(mysqli_num_rows($tr)>0)
+                                        {
+
+                                            while($row = mysqli_fetch_assoc($tr))
+                                            {
+                                               ?>
+
+
+                                            
+
+                                            <tr>
+                                                <td><?php echo($row['name']);?></td>
+                                                <td><?php echo($row['phone']);?></td>
+                                                <td><?php echo($row['email']);?></td>
+                                                <td><?php echo($row['password']);?></td>
+                                                <td><button class="btn btn-primary">Edit</button></td>
+                                                <td><button class="btn btn-danger">Delete</button></td>
+                                            </tr>
+
+
+                                            <?php 
+                                            }
+
+                                        }
+                                        else{
+                                            echo ("No record Fund");
+                                        }
+                                        ?>
                                     </tbody>
                                     
                                 </table>
@@ -139,9 +153,6 @@ include('./security.php');
 
   </div>
   <!-- End of Main Content -->
-
-
-
 
 
 

@@ -1,6 +1,5 @@
 <?php
-
-$server_name = "localhost";
+$server_name = "localhost:3308";
 $db_username = "root";
 $db_password = "";
 $db_name = "foxsafari";
