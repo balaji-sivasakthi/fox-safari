@@ -20,21 +20,7 @@ include('./includes/header.php'); ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h4 ml-2 mb-0 text-gray-800">Add Admin</h1>
                     </div>
-                    <?php
-                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
-                                echo $_SESSION['status'];
-                                $_SESSION['status']='';
-                                session_destroy();
-                               
-                            }
-                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
-                                echo $_SESSION['status-code'];
-                                $_SESSION['status']='';
-                                session_destroy();
-                                
-                            }
-                           
-                        ?>
+                   
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
                               Add Admin
@@ -96,9 +82,35 @@ $tr = mysqli_query($connection,$tq);
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
                         </div>
-                       
+                        
                         <div class="card-body">
                             <div class="table-responsive">
+                            <?php
+                            if (isset($_SESSION['status']) && $_SESSION['status']!=''){
+                                ?>
+                                <p style="color: green;">
+                                <?php
+                                echo $_SESSION['status'];
+                                $_SESSION['status']='';
+                                session_destroy();
+                               ?>
+                               </p>
+                               <?php
+                            }
+                            if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
+                                ?>
+                                <p style="color: green;">
+                                <?php
+                                echo $_SESSION['status-code'];
+                                $_SESSION['status-code']='';
+                                session_destroy();
+                               ?>
+                               </p>
+                               <?php
+                                
+                            }
+                           
+                        ?>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>

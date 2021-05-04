@@ -104,15 +104,10 @@ $tr = mysqli_query($connection,$tq);
                                <?php
                             }
                             if (isset($_SESSION['status-code']) && $_SESSION['status-code']!=''){
-                                ?>
-                                <p style="color: green;">
-                                <?php
+                               
                                 echo $_SESSION['status-code'];
                                 $_SESSION['status-code']='';
                                 session_destroy();
-                               ?>
-                               </p>
-                               <?php
                                 
                             }
                            

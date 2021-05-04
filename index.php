@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +96,31 @@
                     <a class="nav-link page-scroll" href="#contact">CONTACT</a>
                 </li>
             </ul>
-            <span class="nav-item">
+
+
+
+
+            <?php
+            if(isset($_SESSION['log']) && $_SESSION['log']!=''){
+?> 
+        <span class="nav-item">
+                <span class="social">
+                    <a style="text-decoration: none;" class="social-a" href="">
+                        <span style="color:aliceblue" ><?php echo($_SESSION['log'])?></span>
+                       
+                    </a>
+                </span>
+
+            </span>
+
+           
+<?php
+                    
+                    $_SESSION['log']="";
+            }else{?>
+
+
+<span class="nav-item">
                 <span class="social">
                     <a style="text-decoration: none;" class="social-a popup-with-move-anim" href="#login">
                         <span class="social-box ">SIGN IN</span>
@@ -113,6 +138,23 @@
                 </span>
 
             </span>
+
+
+
+
+<?php            }
+
+            ?>
+
+        
+
+
+           
+
+            
+
+           
+         
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navbar -->
@@ -148,19 +190,25 @@
 
   <!-- Project Lightboxes -->
     <!-- Lightbox -->
+
     <div id="login" class="lightbox-basic zoom-anim-dialog mfp-hide">
         <div class="row">
             <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
             <div class="col-lg-12">
                 <h3>Sign In</h3>
                 <hr class="line-heading">
-              <div class="form-group">
+                <form action="login.php" method="post">
+
+                <div class="form-group">
                 <label for="">Email</label>
-                <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email address" >
+                <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Enter your email address" >
                 <label for="pass">Password</label>
-                <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter your password" >
+                <input type="password" name="pass" id="pass" class="form-control" autocomplete="off" placeholder="Enter your password" >
               </div>
-                <a class="btn-solid-reg" href="#your-link">Login</a> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#signup">Sign Up</a> 
+                <button class="btn-solid-reg" type="sumbit" name="login" href="">Login</button> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#signup">Sign Up</a> 
+
+                </form>
+              
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->

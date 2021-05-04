@@ -4,7 +4,6 @@ include('./security.php');
 
 //  Admin Registration
 $username = $password = $confirm_password = $phone = $name = $email = "";
-$username_err = $password_err = $confirm_password_err = $phone_err = $name_err = $email_err = "";
 
 
 if(isset($_POST['registerbtn']))
@@ -115,17 +114,26 @@ if(isset($_POST['editUserMainBtn']))
     $name=$_POST['username'];
     $email=$_POST['email'];
     $phone=$_POST['phone'];
-    $pass=$_POST['password'];
+    $pass=md5($_POST['password']);
     $equery="UPDATE user SET name='$name' ,phone='$phone',email='$email',password='$pass' WHERE id ='$edit_id'" ;
     $equery_run=mysqli_query($connection,$equery);
-    $_SESSION['status']="<p>Sucessfully Edited</p>";
-    header("location:./user.php");
+    if($insert_run){
+           
+        
+       
+        $_SESSION['status']='<p style="color: green;">User Record Edited Sucessfully</p>';
+        $_SESSION['status_code']="Success";
+        header("location: ./user.php");
 
-}elseif(isset($_POST['editUserMainBtn'])){
-    $_SESSION['status']="<p>Not Sucessfully Edited</p>";   
-    header("location:./user.php");
+
+    }else
+    {
+        $_SESSION['status']='<p style="color: red;">User Record Not Edited</p>';
+        $_SESSION['status_code']="Error";
+        header("location: ./user.php");
+    }
+
 }
-
 
 
 // Edit cancel
@@ -142,14 +150,14 @@ if(isset($_POST['userDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM user WHERE id='$edit_id'";
     $equery_run=mysqli_query($connection,$equery);
-    $_SESSION['status']="SuccessFully Deleted";
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
 
 
     header("Location:./user.php");
 }
 
 
-// User Delete 
+// Admin Delete 
 
 if(isset($_POST['adminDeleteBtn'])){
     $edit_id = $_POST['editid'];
