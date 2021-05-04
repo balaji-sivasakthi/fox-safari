@@ -33,7 +33,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#master"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-fw fa-users"></i>
         <span>Add Users</span>
     </a>
     <div id="master" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -52,8 +52,8 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Add Tours</span>
+        <i class="fas fa-fw fa-calendar-week"></i>
+        <span>Events</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
@@ -64,8 +64,29 @@
     </div>
 </li>
 
+<!--Gallery Nav Items-->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#gallery"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-file-alt"></i>
+
+        <span>Gallery</span>
+    </a>
+    <div id="gallery" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Gallery</h6>
+            <a class="collapse-item" href="buttons.html">Inside India</a>
+            <a class="collapse-item" href="cards.html">Oustside India</a>
+        </div>
+    </div>
+    
+</li>
+
+
 <!-- Divider -->
 <hr class="sidebar-divider">
+
+
 
 <!-- Heading -->
 <div class="sidebar-heading">
@@ -76,8 +97,8 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Utours"
         aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Upcoming Tours</span>
+        <i class="fas fa-fw fa-route"></i>
+        <span>Requests</span>
     </a>
     <div id="Utours" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
@@ -88,36 +109,6 @@
     </div>
 </li>
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Otours"
-        aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Ongoing Tours</span>
-    </a>
-    <div id="Otours" class="collapse" aria-labelledby="headingTow" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tours</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
-        </div>
-    </div>
-</li>
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-        aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Finished Tours</span>
-    </a>
-    <div id="collapsePages" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tours</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
-        </div>
-    </div>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
@@ -129,7 +120,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#report"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-fw fa-file-alt"></i>
         <span>Reports</span>
     </a>
     <div id="report" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -141,7 +132,6 @@
     </div>
     
 </li>
-
 
 
 
