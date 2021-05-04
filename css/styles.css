@@ -2502,6 +2502,7 @@ a:hover.back-to-top {
 	background-color: wheat;
 }
 .big-tour-card:hover{
+	cursor: pointer;
 	border-radius: 0;
 	box-shadow: #153e52 0 0 10px;
 	transition-duration: .4s;
@@ -2510,30 +2511,32 @@ a:hover.back-to-top {
 .small-tour-card{
 	margin: 10px;
 	height: 500px;
-	background-color: #153e52;
+	box-shadow: #153e52 0 0 5px;
+	background-color: #ffffff;
 }
 .small-tour-card:hover{
+	cursor: pointer;
 	border-radius: 0;
-	box-shadow: #153e52 0 0 10px;
+	box-shadow: #747474 0 0 10px;
 	transition-duration: .4s;
 }
 .small-tour-card h1{
-	color: white;
+	color: #153e52;
 }
 .small-tour-card h2{
-	color: white;
+	color: #153e52;
 }
 .small-tour-card h3{
-	color: white;
+	color: #153e52;
 }
 .small-tour-card h4{
-	color: white;
+	color: #153e52;
 }
 .small-tour-card h5{
-	color: white;
+	color: #153e52;
 }
 .small-tour-card h6{
-	color: white;
+	color: #153e52;
 }
 
 
