@@ -87,7 +87,7 @@
 
                 <!-- Dropdown Menu -->          
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="index.html#about" id="navbarDropdown" role="button" Latrosoft-haspopup="true" Latrosoft-expanded="false">TOUR</a>
+                    <a class="nav-link dropdown-toggle page-scroll" href="index.php#about" id="navbarDropdown" role="button" Latrosoft-haspopup="true" Latrosoft-expanded="false">TOUR</a>
                     <div class="dropdown-menu" Latrosoft-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="inside-india.html"><span class="item-text">Inside India</span></a>
                         <div class="dropdown-items-divide-hr"></div>
@@ -96,15 +96,15 @@
                 </li>
                 <!-- end of dropdown menu -->
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#services">GALLERY</a>
+                    <a class="nav-link page-scroll" href="index.php#services">GALLERY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#testi">TESTIMONIAL</a>
+                    <a class="nav-link page-scroll" href="index.php#testi">TESTIMONIAL</a>
                 </li>
                
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#contact">CONTACT</a>
+                    <a class="nav-link page-scroll" href="index.php#contact">CONTACT</a>
                 </li>
             </ul>
             <span class="nav-item">
@@ -167,14 +167,18 @@
             <div class="col-lg-12">
                 <h3>Sign In</h3>
                 <hr class="line-heading">
-              <div class="form-group">
-                <label for="">Email</label>
-                <input type="text" name="email" id="email" class="form-control" placeholder="" >
-                <label for="pass">Password</label>
-                <input type="password" name="pass" id="pass" class="form-control" placeholder="">
-              </div>
+                <form action="login.php" method="post">
+
+                    <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Enter your email address" >
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" id="pass" class="form-control" autocomplete="off" placeholder="Enter your password" >
+                  </div>
+                    <button class="btn-solid-reg" type="sumbit" name="login" href="">Login</button> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#signup">Sign Up</a> 
+    
+                    </form>
                
-                <a class="btn-solid-reg" href="#your-link">Login</a> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#signup">Sign Up</a> 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->

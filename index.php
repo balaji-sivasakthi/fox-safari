@@ -201,9 +201,9 @@
 
                 <div class="form-group">
                 <label for="">Email</label>
-                <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Enter your email address" >
+                <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Enter Your Email Address" >
                 <label for="pass">Password</label>
-                <input type="password" name="pass" id="pass" class="form-control" autocomplete="off" placeholder="Enter your password" >
+                <input type="password" name="pass" id="pass" class="form-control" autocomplete="off" placeholder="Enter Your Password" >
               </div>
                 <button class="btn-solid-reg" type="sumbit" name="login" href="">Login</button> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#signup">Sign Up</a> 
 
@@ -227,13 +227,13 @@
                 <hr class="line-heading">
 
 
-                    <form action="" method="post">
+                    <form action="login.php" method="post">
 
 
                         <div class="form-group">
 
                             <label for="fname">Full name <span class="red">*</span></label>
-                            <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter your fullname" >
+                            <input type="text" name="fname" id="fname" class="form-control" placeholder="Fullname" >
 
                         </div>
                
@@ -241,19 +241,19 @@
                         <div class="form-group">
 
                             <label for="phone">Phone<span class="red"> *</span></label>
-                            <input type="phone" name="phone" id="phone" class="form-control" placeholder="Enter your phone number" >
+                            <input type="phone" name="phone" id="phone" class="form-control" placeholder="Phone Number" >
                        
                         </div>
                            
                         <div class="form-group">
                             <label for="email">Email<span class="red"> *</span></label>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter an email-id" >
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email Id" >
                         </div>
                            
                         <div class="form-group">
 
                             <label for="pass">Password<span class="red"> *</span></label>
-                            <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter a valid password">
+                            <input type="password" name="pass" id="pass" class="form-control" placeholder="Password">
 
                         </div>
         
