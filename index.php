@@ -267,7 +267,7 @@
                            
                       
                             <div class="form-group">
-                                <a class="btn-solid-reg" href="#your-link">Sign Up</a> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#login">Sign In</a> 
+                                <button name="rgtUser" class="btn-solid-reg">Sign Up</button> <a class="btn-outline-reg mfp-close as-button popup-with-move-anim" href="#login">Sign In</a> 
                             </div>
         
                       
