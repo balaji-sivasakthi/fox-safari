@@ -58,8 +58,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tours</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
+            <a class="collapse-item" href="event_inside.php">Inside India</a>
+            <a class="collapse-item" href="event_outside.php">Oustside India</a>
         </div>
     </div>
 </li>
@@ -75,8 +75,8 @@
     <div id="gallery" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gallery</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
+            <a class="collapse-item" href="gallery_inside.php">Inside India</a>
+            <a class="collapse-item" href="gallery_outside.php">Oustside India</a>
         </div>
     </div>
     
@@ -103,8 +103,8 @@
     <div id="Utours" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tours</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
+            <a class="collapse-item" href="request_inside.php">Inside India</a>
+            <a class="collapse-item" href="request_outside.php">Oustside India</a>
         </div>
     </div>
 </li>
@@ -126,8 +126,8 @@
     <div id="report" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Reports</h6>
-            <a class="collapse-item" href="buttons.html">Inside India</a>
-            <a class="collapse-item" href="cards.html">Oustside India</a>
+            <a class="collapse-item" href="report_inside.php">Inside India</a>
+            <a class="collapse-item" href="report_outside.php">Oustside India</a>
         </div>
     </div>
     
