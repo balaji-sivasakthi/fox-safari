@@ -71,7 +71,11 @@ include('./includes/header.php'); ?>
               <label for="price">Price</label>
               <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="">
             </div>
-           
+           <div class="form-group">
+             <label for="image">Image</label>
+             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="">
+            
+           </div>
            
         </div>
         <div class="modal-footer">
@@ -94,7 +98,7 @@ $tr = mysqli_query($connection,$tq);
  <!-- Fox Admin  -->
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Events</h6>
                         </div>
                         
                         <div class="card-body">
@@ -128,54 +132,23 @@ $tr = mysqli_query($connection,$tq);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Encrypted Password</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>Title</th>
+                                            <th>From Place</th>
+                                            <th>To Place</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Price</th>
+                                            <th>Image</th>
                                         </tr>
                                     </thead>
                                 
                                     <tbody>
-                                    <?php
-                                       
-                                       if(mysqli_num_rows($tr)>0)
-                                       {
-
-                                           while($row = mysqli_fetch_assoc($tr))
-                                           {
-                                              ?>
-
-
-                                           
-
                                            <tr>
-                                               <td><?php echo($row['user']);?></td>
-                                               <td><?php echo($row['email']);?></td>
-                                               <td><?php echo($row['pass']);?></td>
-                                               <td>
-                                                    <form action="edit_user.php" method="post">
-                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
-                                                    <button type="submit" name="adminEditBtn" class="btn btn-primary">Edit</button>
-                                                    </form>
-                                                </td>
-                                                <td>
-                                                <form action="code.php" method="post">
-                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
-                                                    <button type="submit" name="adminDeleteBtn" class="btn btn-danger">Delete</button>
-                                                    </form>
-                                                </td>
+                                               <td>Coimbatore Event</td>
+                                               <td>Coimbatore</td>
+                                               <td>Coimbatore</td>
+                                               
                                            </tr>
-
-
-                                           <?php 
-                                           }
-
-                                       }
-                                       else{
-                                           echo ("No record Found");
-                                       }
-                                       ?>
                                     </tbody>
                                     
                                 </table>

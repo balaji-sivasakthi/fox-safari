@@ -41,24 +41,42 @@ include('./includes/header.php'); ?>
         <div class="modal-body">
 
             <div class="form-group">
-                <label> Username </label>
-                <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control checking_email" placeholder="Enter Email" required>
-                <small class="error_email" style="color: red;"></small>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-            </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" class="form-control" placeholder="">
             </div>
 
+            <div class="row">
+            <div class="form-group col-6">
+              <label for="fromPlace">From Place</label>
+              <input type="text" name="fromplace" id="fromplace" class="form-control" placeholder="">
+            </div>
+            <div class="form-group col-6">
+              <label for="toPlace">To Place</label>
+              <input type="text" name="toplace" id="fromplace" class="form-control" placeholder="">
+            </div>
+            </div>
+           
 
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" name="date" id="date" class="form-control" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" name="time" id="time" class="form-control" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="">
+            </div>
+           <div class="form-group">
+             <label for="image">Image</label>
+             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="">
+            
+           </div>
+           
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
