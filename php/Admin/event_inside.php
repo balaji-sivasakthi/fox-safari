@@ -139,6 +139,8 @@ $tr = mysqli_query($connection,$tq);
                                             <th>Time</th>
                                             <th>Price</th>
                                             <th>Image</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                 
@@ -146,8 +148,13 @@ $tr = mysqli_query($connection,$tq);
                                            <tr>
                                                <td>Coimbatore Event</td>
                                                <td>Coimbatore</td>
-                                               <td>Coimbatore</td>
-                                               
+                                               <td>Chennai</td>
+                                               <td>12-08-2020</td>
+                                               <td>12:00PM</td>
+                                               <td>Rs.2000</td>
+                                               <td>img_12.png</td>
+                                               <td><button class="btn btn-primary">Edit</button></td>
+                                               <td><button class="btn btn-danger">Delete</button></td>
                                            </tr>
                                     </tbody>
                                     
