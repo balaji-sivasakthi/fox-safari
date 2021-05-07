@@ -18,12 +18,12 @@ include('./includes/header.php'); ?>
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h4 ml-2 mb-0 text-gray-800">Events For Inside india</h1>
+                        <h1 class="h4 ml-2 mb-0 text-gray-800">Gallery Outside </h1>
                     </div>
                    
                     <div class="row ml-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                              Add New Event
+                              Add Photos
                         </button>
                      </div>
 
@@ -40,23 +40,12 @@ include('./includes/header.php'); ?>
 
         <div class="modal-body">
 
-            <div class="form-group">
-                <label> Username </label>
-                <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control checking_email" placeholder="Enter Email" required>
-                <small class="error_email" style="color: red;"></small>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-            </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
-            </div>
+
+                 <div class="form-group">
+                <input type="file" accept="image/*" name="gallery_inside" >
+                </div>
+                
+                  
 
 
         </div>
@@ -114,54 +103,24 @@ $tr = mysqli_query($connection,$tq);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Encrypted Password</th>
+                                            <th>Title</th>
+                                            <th>Image</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                 
                                     <tbody>
-                                    <?php
-                                       
-                                       if(mysqli_num_rows($tr)>0)
-                                       {
-
-                                           while($row = mysqli_fetch_assoc($tr))
-                                           {
-                                              ?>
-
-
-                                           
-
-                                           <tr>
-                                               <td><?php echo($row['user']);?></td>
-                                               <td><?php echo($row['email']);?></td>
-                                               <td><?php echo($row['pass']);?></td>
-                                               <td>
-                                                    <form action="edit_user.php" method="post">
-                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
-                                                    <button type="submit" name="adminEditBtn" class="btn btn-primary">Edit</button>
-                                                    </form>
-                                                </td>
-                                                <td>
-                                                <form action="code.php" method="post">
-                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
-                                                    <button type="submit" name="adminDeleteBtn" class="btn btn-danger">Delete</button>
-                                                    </form>
-                                                </td>
-                                           </tr>
+                                   
+                                            <tr>
+                                            
+                                            <td>Lion</td>
+                                            <td>Img_2.jpeg</td>
+                                            <td><button class="btn btn-primary" >Edit</button></td>
+                                            <td><button class="btn btn-danger">Delete</button></td>
+                                            </tr>
 
 
-                                           <?php 
-                                           }
-
-                                       }
-                                       else{
-                                           echo ("No record Found");
-                                       }
-                                       ?>
                                     </tbody>
                                     
                                 </table>
