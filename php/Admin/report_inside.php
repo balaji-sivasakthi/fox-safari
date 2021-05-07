@@ -88,17 +88,18 @@ $tr = mysqli_query($connection,$tq);
                                            
 
                                            <tr>
-                                               <td>Hello</td>
-                                               <td>Hello</td>
-                                               <td>Helo</td>
+                                               <td><?php echo($row['user']);?></td>
+                                               <td><?php echo($row['email']);?></td>
+                                               <td><?php echo($row['pass']);?></td>
                                                <td>
                                                     <form action="edit_user.php" method="post">
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
                                                     <button type="submit" name="adminEditBtn" class="btn btn-success">Accept</button>
                                                     </form>
                                                 </td>
                                                 <td>
                                                 <form action="code.php" method="post">
-                                                    
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
                                                     <button type="submit" name="adminDeleteBtn" class="btn btn-danger">Delete</button>
                                                     </form>
                                                 </td>
