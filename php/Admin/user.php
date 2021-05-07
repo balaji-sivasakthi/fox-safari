@@ -135,9 +135,6 @@ $tr = mysqli_query($connection,$tq);
                                             {
                                                ?>
 
-
-                                            
-
                                             <tr>
                                                 <td><?php echo($row['name']);?></td>
                                                 <td><?php echo($row['phone']);?></td>
