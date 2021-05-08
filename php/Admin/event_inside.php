@@ -42,45 +42,45 @@ include('./includes/header.php'); ?>
 
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" name="title" id="title" class="form-control" placeholder="">
+              <input type="text" name="title" id="title" class="form-control" placeholder="" required>
             </div>
 
             <div class="row">
             <div class="form-group col-6">
               <label for="fromPlace">From Place</label>
-              <input type="text" name="fromplace" id="fromplace" class="form-control" placeholder="">
+              <input type="text" name="fromplace" id="fromplace" class="form-control" placeholder="" required>
             </div>
             <div class="form-group col-6">
               <label for="toPlace">To Place</label>
-              <input type="text" name="toplace" id="fromplace" class="form-control" placeholder="">
+              <input type="text" name="toplace" id="toplace" class="form-control" placeholder="" required>
             </div>
             </div>
            
 
             <div class="form-group">
               <label for="date">Date</label>
-              <input type="date" name="date" id="date" class="form-control" placeholder="">
+              <input type="date" name="date" id="date" class="form-control" placeholder="" required>
             </div>
 
             <div class="form-group">
               <label for="time">Time</label>
-              <input type="time" name="time" id="time" class="form-control" placeholder="">
+              <input type="time" name="time" id="time" class="form-control" placeholder="" required>
             </div>
 
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="">
+              <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="" required>
             </div>
            <div class="form-group">
              <label for="image">Image</label>
-             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="">
+             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="" >
             
            </div>
            
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="submit" name="eventSaveBtn" class="btn btn-primary">Save</button>
         </div>
       </form>
 

@@ -168,6 +168,19 @@ if(isset($_POST['adminDeleteBtn'])){
 
     header("Location:./admin.php");
 }
+// event filling -inside india
+
+if(isset($_POST['eventSaveBtn'])){
+    $title = $_POST['title'];
+    $fromplace = $_POST['fromplace'];
+    $toplace = $_POST['toplace'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $price = $_POST['price'];
+   // $image = $_POST['image'];
+    $inside_query = "INSERT INTO inside (title,fromplace,toplace,date,time,price) VALUES ('$title','$fromplace','$toplace','$date',$time,'$price')";
+    $inside_query_run = mysqli_query($connection, $inside_query);
+}   
 
 ?>
 
