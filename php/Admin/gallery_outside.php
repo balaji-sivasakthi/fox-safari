@@ -36,13 +36,18 @@ include('./includes/header.php'); ?>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="./code.php" method="POST">
-
+      <form action="./code.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="size" value="1000000">
         <div class="modal-body">
 
 
-                 <div class="form-group">
-                <input type="file" accept="image/*" name="gallery_inside" >
+                <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="" >           
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Description</label>
+                    <input type="text" name="image_text" id="image_text" class="form-control" placeholder="" >
                 </div>
                 
                   
@@ -51,7 +56,7 @@ include('./includes/header.php'); ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="submit" name="outsidegalleryBtn" class="btn btn-primary">Upload</button>
         </div>
       </form>
 
@@ -61,7 +66,7 @@ include('./includes/header.php'); ?>
 
 <?php
 
-$tq="SELECT * FROM admin";
+$tq="SELECT * FROM galleryout";
 $tr = mysqli_query($connection,$tq);
 
 ?>
@@ -69,7 +74,7 @@ $tr = mysqli_query($connection,$tq);
  <!-- Fox Admin  -->
  <div class="card shadow mt-5 mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Fox Admin</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Gallery</h6>
                         </div>
                         
                         <div class="card-body">
@@ -103,8 +108,10 @@ $tr = mysqli_query($connection,$tq);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Image</th>
+                                            
+                                            <th>Image name</th>
+                                            <th>Image preview</th>
+                                            <th>Image Description</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
@@ -112,15 +119,44 @@ $tr = mysqli_query($connection,$tq);
                                 
                                     <tbody>
                                    
-                                            <tr>
-                                            
-                                            <td>Lion</td>
-                                            <td>Img_2.jpeg</td>
-                                            <td><button class="btn btn-primary" >Edit</button></td>
-                                            <td><button class="btn btn-danger">Delete</button></td>
-                                            </tr>
+                                    <?php
+                                       
+                                       if(mysqli_num_rows($tr)>0)
+                                       {
+
+                                           while($row = mysqli_fetch_assoc($tr))
+                                           {
+                                              ?>
 
 
+                                           
+
+                                           <tr>
+                                              
+                                               <td><?php echo($row['image']);?></td>
+                                               <td>
+                                               <?php $image_path = $row['image']; ?>
+                                               <img src="/php/Admin/gallery/outside/<?php echo $image_path;?>" width="170" height="100">
+                                               </td>
+                                               <td><?php echo($row['image_text']);?></td>
+                                               <td><button class="btn btn-primary">Edit</button></td>
+                                               <td>
+                                                <form action="code.php" method="post">
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
+                                                    <button type="submit" name="galleryoutDeleteBtn" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                           </tr>
+
+
+                                           <?php 
+                                           }
+
+                                       }
+                                       else{
+                                           echo ("No record Found");
+                                       }
+                                       ?>
                                     </tbody>
                                     
                                 </table>

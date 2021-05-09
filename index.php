@@ -770,7 +770,7 @@
                     </div> <!-- end of button group -->
                     <div class="grid">
                         <div class="element-item development">
-                            <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative"></a>
+                            <a class="popup-with-move-anim" ><div class="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative"></a>
                         </div>
                         <div class="element-item development">
                             <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"><span>Classic Industry</span></div><img src="images/project-2.jpg" alt="alternative"></a>

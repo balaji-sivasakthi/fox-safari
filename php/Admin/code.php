@@ -157,17 +157,274 @@ if(isset($_POST['userDeleteBtn'])){
 }
 
 
+
+
+
 // Admin Delete 
+
+
+
 
 if(isset($_POST['adminDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM admin WHERE id='$edit_id'";
     $equery_run=mysqli_query($connection,$equery);
-    $_SESSION['status']="Successfully Deleted";
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
 
 
     header("Location:./admin.php");
 }
+
+
+
+
+
+// event filling -inside india
+
+
+
+
+
+
+if(isset($_POST['eventSaveBtn'])){
+    $title = $_POST['title'];
+    $fromplace = $_POST['fromplace'];
+    $toplace = $_POST['toplace'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $price = $_POST['price'];
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "images/inside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $inside_query = " INSERT INTO inside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
+    $inside_query_run = mysqli_query($connection,$inside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+ /*   if($inside_query_run){
+        echo("Success");
+
+    }else{
+        echo("Not Success");
+    }   */
+    $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
+    header("location:./event_inside.php");
+} 
+
+
+
+
+//inside event delete
+
+
+
+
+
+
+if(isset($_POST['eventDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM inside WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+    header("Location:./event_inside.php");
+} 
+
+
+
+
+//outside event
+
+
+
+
+if(isset($_POST['outeventSaveBtn'])){
+    $title = $_POST['title'];
+    $fromplace = $_POST['fromplace'];
+    $toplace = $_POST['toplace'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $price = $_POST['price'];
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "images/outside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+   // echo "success";
+    $outside_query = " INSERT INTO outside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
+    $outside_query_run = mysqli_query($connection,$outside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+       
+    }else{
+        $msg = "Failed to upload image";
+    }
+ /*   if($inside_query_run){
+        echo("Success");
+
+    }else{
+        echo("Not Success");
+    }   */
+    $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
+    header("location:./event_outside.php");
+
+} 
+
+
+
+
+// outside event delete
+
+
+
+
+
+
+if(isset($_POST['outeventDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM outside WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+
+
+    header("Location:./event_outside.php");
+}
+
+
+
+
+//gallery inside
+
+
+
+
+
+if(isset($_POST['insidegalleryBtn'])){
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "gallery/inside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $inside_query = " INSERT INTO galleryin ( image, image_text) VALUES ('$image', '$image_text')";
+    $inside_query_run = mysqli_query($connection,$inside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+        $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
+    }else{
+        $msg = "Failed to upload image";
+        $_SESSION['status']='<p style="color: red;">Failed to upload image</p>';
+    }
+
+    header("Location:./gallery_inside.php");
+}
+
+
+
+
+//gallery outside
+
+
+
+if(isset($_POST['outsidegalleryBtn'])){
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "gallery/outside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $outside_query = " INSERT INTO galleryout ( image, image_text) VALUES ('$image', '$image_text')";
+    $outside_query_run = mysqli_query($connection,$outside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+        $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
+    }else{
+        $msg = "Failed to upload image";
+    }
+
+    header("Location:./gallery_outside.php");
+}
+
+
+
+
+
+//gallery inside delete
+
+
+
+
+
+if(isset($_POST['galleryinDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM galleryin WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+ header("Location:./gallery_inside.php");
+}
+
+
+
+
+
+//gallery outside delete
+
+
+
+if(isset($_POST['galleryoutDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM galleryout WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    header("Location:./gallery_outside.php");
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+
+}
+
 
 ?>
 

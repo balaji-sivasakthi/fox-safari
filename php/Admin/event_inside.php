@@ -10,6 +10,15 @@ include('./includes/header.php'); ?>
 <!-- Main Content -->
             <div id="content">
 
+<!-- stylesheet -->
+ <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/fontawesome-all.css" rel="stylesheet">
+  <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">           
+
                
 <?php include('./includes/top-bar.php');?>
 
@@ -36,51 +45,55 @@ include('./includes/header.php'); ?>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="./code.php" method="POST">
-
+      <form action="./code.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="size" value="1000000">
         <div class="modal-body">
 
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" name="title" id="title" class="form-control" placeholder="">
+              <input type="text" name="title" id="title" class="form-control" placeholder="" required>
             </div>
 
             <div class="row">
             <div class="form-group col-6">
               <label for="fromPlace">From Place</label>
-              <input type="text" name="fromplace" id="fromplace" class="form-control" placeholder="">
+              <input type="text" name="fromplace" id="fromplace" class="form-control" placeholder="" required>
             </div>
             <div class="form-group col-6">
               <label for="toPlace">To Place</label>
-              <input type="text" name="toplace" id="fromplace" class="form-control" placeholder="">
+              <input type="text" name="toplace" id="toplace" class="form-control" placeholder="" required>
             </div>
             </div>
            
 
             <div class="form-group">
               <label for="date">Date</label>
-              <input type="date" name="date" id="date" class="form-control" placeholder="">
+              <input type="date" name="date" id="date" class="form-control" placeholder="" required>
             </div>
 
             <div class="form-group">
               <label for="time">Time</label>
-              <input type="time" name="time" id="time" class="form-control" placeholder="">
+              <input type="time" name="time" id="time" class="form-control" placeholder="" required>
             </div>
 
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="">
+              <input type="tel" name="price" id="price" class="form-control" placeholder="" required>
             </div>
            <div class="form-group">
              <label for="image">Image</label>
-             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="">
+             <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="" >
             
            </div>
-           
+           <div class="form-group">
+             <label for="image">Image Description</label>
+             <input type="text" name="image_text" id="image_text" class="form-control" placeholder="" >
+            
+           </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="submit" name="eventSaveBtn" class="btn btn-primary">Save</button>
         </div>
       </form>
 
@@ -90,7 +103,7 @@ include('./includes/header.php'); ?>
 
 <?php
 
-$tq="SELECT * FROM admin";
+$tq="SELECT * FROM inside";
 $tr = mysqli_query($connection,$tq);
 
 ?>
@@ -138,24 +151,59 @@ $tr = mysqli_query($connection,$tq);
                                             <th>Date</th>
                                             <th>Time</th>
                                             <th>Price</th>
-                                            <th>Image</th>
+                                            <th>Image Name</th>
+                                            <th>Image Preview</th>
+                                            <th>Image Description</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                 
                                     <tbody>
+                                           <?php
+                                       
+                                       if(mysqli_num_rows($tr)>0)
+                                       {
+
+                                           while($row = mysqli_fetch_assoc($tr))
+                                           {
+                                              ?>
+
+
+                                           
+
                                            <tr>
-                                               <td>Coimbatore Event</td>
-                                               <td>Coimbatore</td>
-                                               <td>Chennai</td>
-                                               <td>12-08-2020</td>
-                                               <td>12:00PM</td>
-                                               <td>Rs.2000</td>
-                                               <td>img_12.png</td>
+                                               <td><?php echo($row['title']);?></td>
+                                               <td><?php echo($row['fromplace']);?></td>
+                                               <td><?php echo($row['toplace']);?></td>
+                                               <td><?php echo($row['date']);?></td>
+                                               <td><?php echo($row['time']);?></td>
+                                               <td><?php echo($row['price']);?></td>
+                                               <td><?php echo($row['image']);?></td>
+                                               <td>
+                                               <?php $image_path = $row['image']; ?>
+                                               <!-- Dclareation of picture -->
+                                               <img src="/php/Admin/images/inside/<?php echo $image_path;?>" width="200" height="100">
+                                               </td>
+                                               <td><?php echo($row['image_text']);?></td>
                                                <td><button class="btn btn-primary">Edit</button></td>
-                                               <td><button class="btn btn-danger">Delete</button></td>
+                                               <td>
+                                                <form action="code.php" method="post">
+                                                    <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
+                                                    <button type="submit" name="eventDeleteBtn" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
                                            </tr>
+
+
+                                           <?php 
+                                           }
+
+                                       }
+                                       else{
+                                           echo ("No record Found");
+                                       }
+                                       ?>
                                     </tbody>
                                     
                                 </table>
