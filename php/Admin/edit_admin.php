@@ -38,7 +38,7 @@ include('./Database/dbconfig.php');
 
                         <div class="form-group">
                             <label> Username </label>
-                            <input type="text" name="username" value="<?php echo($row['name']); ?>" class="form-control" placeholder="Enter Username">
+                            <input type="text" name="username" value="<?php echo($row['user']); ?>" class="form-control" placeholder="Enter Username">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -46,18 +46,12 @@ include('./Database/dbconfig.php');
                             <small class="error_email" style="color: red;"></small>
                         </div>
                         <div class="form-group">
-                            <label>Phone number</label>
-                            <input type="tel" name="phone" value="<?php echo($row['phone']); ?>" class="form-control" placeholder="Enter phone number">
-                            <small class="error_phone" style="color: red;"></small>
-                        </div>    
-                        <div class="form-group">
                             <label>New Password</label>
-                            <input type="password"   value="<?php echo(""); ?>" name="password" autocomplete="off" class="form-control" placeholder="Enter Password">
+                            <input type="password"  name="password" autocomplete="off" class="form-control" placeholder="Enter Password">
                         </div>
-
                         <div>
                             <button type="submit" class="btn btn-secondary mr-3" name ="editCancel" data-dismiss="modal">Cancel</button>
-                            <button type="submit" name="editUserMainBtn" class="btn btn-primary">Edit</button>
+                            <button type="submit" name="adminUserMainBtn" class="btn btn-primary">Edit</button>
                         </div>
       </form>
 

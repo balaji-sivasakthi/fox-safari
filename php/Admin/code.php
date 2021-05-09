@@ -136,6 +136,38 @@ if(isset($_POST['editUserMainBtn']))
 }
 
 
+
+// Admin edit
+
+
+
+if(isset($_POST['adminUserMainBtn']))
+{
+    $edit_id = $_POST['editid'];
+    $name=$_POST['username'];
+    $email=$_POST['email'];
+    $pass=md5($_POST['password']);
+    $equery="UPDATE admin SET name='$name' , phone='$phone', email='$email', password='$pass' WHERE id ='$edit_id'" ;
+    $equery_run=mysqli_query($connection,$equery);
+    if($insert_run){
+           
+        
+       
+        $_SESSION['status']='<p style="color: green;">User Record Edited Sucessfully</p>';
+        $_SESSION['status_code']="Success";
+        header("location: ./user.php");
+
+
+    }else
+    {
+        $_SESSION['status']='<p style="color: red;">User Record Not Edited</p>';
+        $_SESSION['status_code']="Error";
+        header("location: ./user.php");
+    }
+
+}
+
+
 // Edit cancel
 if(isset($_POST['editCancel']))
 {
@@ -203,25 +235,17 @@ if(isset($_POST['eventSaveBtn'])){
     // image file directory
     $target = "images/inside/".basename($image);
 
-  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
-    // execute query
-    
-//$result = mysqli_query($db, "SELECT * FROM images");
+  
     $inside_query = " INSERT INTO inside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
     $inside_query_run = mysqli_query($connection,$inside_query);
-  //  mysqli_query($connection, $sql);
+  
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
     }else{
         $msg = "Failed to upload image";
     }
- /*   if($inside_query_run){
-        echo("Success");
-
-    }else{
-        echo("Not Success");
-    }   */
+ 
     $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     header("location:./event_inside.php");
 } 
@@ -281,14 +305,10 @@ if(isset($_POST['outeventSaveBtn'])){
     // image file directory
     $target = "images/outside/".basename($image);
 
-  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
-    // execute query
-    
-//$result = mysqli_query($db, "SELECT * FROM images");
-   // echo "success";
+  
     $outside_query = " INSERT INTO outside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
     $outside_query_run = mysqli_query($connection,$outside_query);
-  //  mysqli_query($connection, $sql);
+  
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
@@ -296,12 +316,7 @@ if(isset($_POST['outeventSaveBtn'])){
     }else{
         $msg = "Failed to upload image";
     }
- /*   if($inside_query_run){
-        echo("Success");
-
-    }else{
-        echo("Not Success");
-    }   */
+ 
     $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     header("location:./event_outside.php");
 
