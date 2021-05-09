@@ -312,8 +312,11 @@ if(isset($_POST['outeventDeleteBtn'])){
     $es_r=mysqli_query($connection,$es);
     while($row = mysqli_fetch_assoc($es_r))
     {
-        $image_path=$row['image_path'];
-        $path="/php/Admin/images/inside/".$image_path;
+        echo "success";
+        $image_path = $row['image'];
+        $path="/php/Admin/images/outside/".$image_path;
+        echo $path;
+
         unlink($path);
         
 
