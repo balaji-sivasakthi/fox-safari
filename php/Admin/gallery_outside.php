@@ -135,8 +135,28 @@ $tr = mysqli_query($connection,$tq);
                                               
                                                <td><?php echo($row['image']);?></td>
                                                <td>
-                                               <?php $image_path = $row['image']; ?>
-                                               <img src="/php/Admin/gallery/outside/<?php echo $image_path;?>" width="170" height="100">
+                                               <?php $id =  $row['id'];  ?>
+                                               <?php $image_path = $row['image']; 
+                                               ?>
+                                               <!-- Dclareation of picture -->
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="picture-<?php echo $id; ?>" tabindex="-1" aria-labelledby="image-preview" aria-hidden="true">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <h5 class="modal-title" id="image-preview">Image Preview</h5> 
+                                                          </div>
+                                                          <div class="modal-body">
+                                                            <img style="width: 100%; height:100%" src="/php/Admin/gallery/outside/<?php echo $image_path;?>" alt="">
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                              <img style="cursor: pointer;" data-toggle="modal" data-target="#picture-<?php echo $id;?>"  src="/php/Admin/gallery/outside/<?php echo $image_path;?>" width="200" height="100">
                                                </td>
                                                <td><?php echo($row['image_text']);?></td>
                                                <td><button class="btn btn-primary">Edit</button></td>

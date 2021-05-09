@@ -239,6 +239,18 @@ if(isset($_POST['eventSaveBtn'])){
 if(isset($_POST['eventDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM inside WHERE id='$edit_id'";
+    $es="SELECT *FROM inside WHERE id='$edit_id'";
+    $es_r=mysqli_query($connection,$es);
+    while($row = mysqli_fetch_assoc($es_r))
+    {
+        echo "success";
+        $image_path = $row['image'];
+        $path='./images/inside/'.$image_path;
+
+        unlink($path);
+        
+
+    }
     $equery_run=mysqli_query($connection,$equery);
     $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
     header("Location:./event_inside.php");
@@ -314,8 +326,7 @@ if(isset($_POST['outeventDeleteBtn'])){
     {
         echo "success";
         $image_path = $row['image'];
-        $path="/php/Admin/images/outside/".$image_path;
-        echo $path;
+        $path='./images/outside/'.$image_path;
 
         unlink($path);
         
@@ -417,6 +428,17 @@ if(isset($_POST['outsidegalleryBtn'])){
 if(isset($_POST['galleryinDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM galleryin WHERE id='$edit_id'";
+    $es="SELECT *FROM galleryin WHERE id='$edit_id'";
+    $es_r=mysqli_query($connection,$es);
+    while($row = mysqli_fetch_assoc($es_r))
+    {
+        $image_path = $row['image'];
+        $path='./gallery/inside/'.$image_path;
+
+        unlink($path);
+        
+
+    }
     $equery_run=mysqli_query($connection,$equery);
     $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
  header("Location:./gallery_inside.php");
@@ -433,6 +455,17 @@ if(isset($_POST['galleryinDeleteBtn'])){
 if(isset($_POST['galleryoutDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM galleryout WHERE id='$edit_id'";
+    $es="SELECT *FROM galleryout WHERE id='$edit_id'";
+    $es_r=mysqli_query($connection,$es);
+    while($row = mysqli_fetch_assoc($es_r))
+    {
+        $image_path = $row['image'];
+        $path='./gallery/outside/'.$image_path;
+
+        unlink($path);
+        
+
+    }
     $equery_run=mysqli_query($connection,$equery);
     header("Location:./gallery_outside.php");
     $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';

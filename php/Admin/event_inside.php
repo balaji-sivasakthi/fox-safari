@@ -186,8 +186,6 @@ $tr = mysqli_query($connection,$tq);
                                                <?php $image_path = $row['image']; 
                                                ?>
                                                <!-- Dclareation of picture -->
-
-                                               
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="picture-<?php echo $id; ?>" tabindex="-1" aria-labelledby="image-preview" aria-hidden="true">
                                                       <div class="modal-dialog">
