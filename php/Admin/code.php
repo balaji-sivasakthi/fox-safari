@@ -206,8 +206,15 @@ if(isset($_POST['eventSaveBtn'])){
     }else{
         echo("Not Success");
     }   */
-
-}   
+    header("location:./event_inside.php");
+} 
+if(isset($_POST['eventDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM inside WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+    header("Location:./event_inside.php");
+} 
 if(isset($_POST['outeventSaveBtn'])){
     $title = $_POST['title'];
     $fromplace = $_POST['fromplace'];
@@ -245,8 +252,24 @@ if(isset($_POST['outeventSaveBtn'])){
     }else{
         echo("Not Success");
     }   */
+    header("location:./event_outside.php");
 
 }   
+
+// outside event delete
+if(isset($_POST['outeventDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM outside WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+
+
+    header("Location:./event_outside.php");
+}
+
+
+
+
 ?>
 
 
