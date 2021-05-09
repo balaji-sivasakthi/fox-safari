@@ -36,8 +36,8 @@ include('./includes/header.php'); ?>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="./code.php" method="POST">
-
+      <form action="./code.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="size" value="1000000">
         <div class="modal-body">
 
             <div class="form-group">
@@ -69,14 +69,18 @@ include('./includes/header.php'); ?>
 
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="tel" value ="Rs." name="price" id="price" class="form-control" placeholder="" required>
+              <input type="tel" name="price" id="price" class="form-control" placeholder="" required>
             </div>
            <div class="form-group">
              <label for="image">Image</label>
              <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="" >
             
            </div>
-           
+           <div class="form-group">
+             <label for="image">Image Description</label>
+             <input type="text" name="image_text" id="image_text" class="form-control" placeholder="" >
+            
+           </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

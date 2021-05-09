@@ -177,11 +177,76 @@ if(isset($_POST['eventSaveBtn'])){
     $date = $_POST['date'];
     $time = $_POST['time'];
     $price = $_POST['price'];
-   // $image = $_POST['image'];
-    $inside_query = "INSERT INTO inside (title,fromplace,toplace,date,time,price) VALUES ('$title','$fromplace','$toplace','$date',$time,'$price')";
-    $inside_query_run = mysqli_query($connection, $inside_query);
-}   
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
 
+    // image file directory
+    $target = "images/inside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $inside_query = " INSERT INTO inside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
+    $inside_query_run = mysqli_query($connection,$inside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+ /*   if($inside_query_run){
+        echo("Success");
+
+    }else{
+        echo("Not Success");
+    }   */
+
+}   
+if(isset($_POST['outeventSaveBtn'])){
+    $title = $_POST['title'];
+    $fromplace = $_POST['fromplace'];
+    $toplace = $_POST['toplace'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $price = $_POST['price'];
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "images/outside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+   // echo "success";
+    $outside_query = " INSERT INTO outside ( title, fromplace, toplace, date, time, price, image, image_text) VALUES ('$title', '$fromplace', '$toplace', '$date', '$time', '$price', '$image', '$image_text')";
+    $outside_query_run = mysqli_query($connection,$outside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+ /*   if($inside_query_run){
+        echo("Success");
+
+    }else{
+        echo("Not Success");
+    }   */
+
+}   
 ?>
 
 
