@@ -1,4 +1,7 @@
+<?php include('./php/Admin/Database/dbconfig.php') ?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -268,49 +271,55 @@
                </div>
            </div>
   
-           <div class="col-lg-4">
-              <div class="small-tour-card">
-                  <img width="100%" height="50%" src="/images/best-wildlife-camera.jpg" alt="">
-                  <div class="disc">
-                      <h2>Lorem, ipsum.</h2>
-                      <h4>Date  : 29 Apirl 2021</h4>
-                      <h4>Place : 29 Apirl 2021</h4>
-                      <h6>Prize :</h6> <h3>Rs.2000</h3>
-                      <button class=" btn btn-success w-100 ">Book</button>
-                  </div>
-                  
-  
-              </div>
-          </div>
-  
-          <div class="col-lg-4">
-              <div class="small-tour-card">
-                  <img width="100%" height="50%" src="/images/best-wildlife-camera.jpg" alt="">
-                  <div class="disc">
-                    <h2>Lorem, ipsum.</h2>
-                    <h4>Date  : 29 Apirl 2021</h4>
-                    <h4>Place : 29 Apirl 2021</h4>
-                    <h6>Prize :</h6> <h3>Rs.2000</h3>
-                      <button class=" btn btn-success w-100 ">Book</button>
-                  </div>
-                  
-  
-              </div>
-              
-          </div>
-          <div class="col-lg-4">
-              <div class="small-tour-card">
-                  <img width="100%" height="50%" src="/images/best-wildlife-camera.jpg" alt="">
-                  <div class="disc">
-                    <h2>Lorem, ipsum.</h2>
-                    <h4>Date  : 29 Apirl 2021</h4>
-                    <h4>Place : 29 Apirl 2021</h4>
-                    <h6>Prize :</h6> <h3>Rs.2000</h3>
-                      <button class=" btn btn-success w-100 ">Book</button>
-                  </div>
-                  </div>
-  
-              </div>
+           <?php  
+
+$q = "SELECT * from outside";
+$eq= mysqli_query($connection,$q);
+
+while($row = mysqli_fetch_assoc($eq))
+{ ?>
+
+<div class="col-lg-4">
+            <div class="small-tour-card">
+           
+                <img width="100%" height="50%" src="./php/Admin/images/inside/<?php echo($row['image']);?>" alt="">
+                <div class="disc">
+                <table>
+                        <tr>
+                            <th colspan="2" ><h2><?php echo($row['title'])?></h2></th>
+                        </tr>
+                        <tr>
+                            <th><h6>From</h6></th>
+                            <td><h6><?php echo($row['fromplace'])?></h6></td>
+                        </tr>
+                        <tr>
+                            <th><h6>To</h6></th>
+                            <td><h6><?php echo($row['toplace'])?></h6></td>
+                        </tr>
+                        <tr>
+                            <th><h6>Date</h6></th>
+                            <td><h6><?php echo($row['date'])?></h6></td>
+                        </tr>
+                        <tr>
+                            <th><h6>Time</h6></th>
+                            <td><h6><?php echo($row['time'])?></h6></td>
+                        </tr>
+                        <tr>
+                            <th><h6>Rs.</h6></th>
+                            <td><h6><?php echo($row['price'])?></h6></td>
+                        </tr>
+                    </table>
+                    <button class=" btn btn-success w-100 ">Book</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+<?php
+ } ?>
+          
           </div>
         </div>
     </div>
