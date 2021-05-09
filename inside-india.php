@@ -92,9 +92,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="index.php#about" id="navbarDropdown" role="button" Latrosoft-haspopup="true" Latrosoft-expanded="false">TOUR</a>
                     <div class="dropdown-menu" Latrosoft-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="inside-india.html"><span class="item-text">Inside India</span></a>
+                        <a class="dropdown-item" href="inside-india.php"><span class="item-text">Inside India</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="outside-india.html"><span class="item-text">Outside India</span></a>
+                        <a class="dropdown-item" href="outside-india.php"><span class="item-text">Outside India</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->

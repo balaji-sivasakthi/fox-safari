@@ -85,16 +85,16 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="/index.html">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="/index.php">HOME <span class="sr-only">(current)</span></a>
                 </li>
 
                 <!-- Dropdown Menu -->          
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="index.php#about" id="navbarDropdown" role="button" Latrosoft-haspopup="true" Latrosoft-expanded="false">TOUR</a>
                     <div class="dropdown-menu" Latrosoft-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="inside-india.html"><span class="item-text">Inside India</span></a>
+                        <a class="dropdown-item" href="inside-india.php"><span class="item-text">Inside India</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="outside-india.html"><span class="item-text">Outside India</span></a>
+                        <a class="dropdown-item" href="outside-india.php"><span class="item-text">Outside India</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
