@@ -157,18 +157,34 @@ if(isset($_POST['userDeleteBtn'])){
 }
 
 
+
+
+
 // Admin Delete 
+
+
+
 
 if(isset($_POST['adminDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM admin WHERE id='$edit_id'";
     $equery_run=mysqli_query($connection,$equery);
-    $_SESSION['status']="Successfully Deleted";
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
 
 
     header("Location:./admin.php");
 }
+
+
+
+
+
 // event filling -inside india
+
+
+
+
+
 
 if(isset($_POST['eventSaveBtn'])){
     $title = $_POST['title'];
@@ -206,8 +222,20 @@ if(isset($_POST['eventSaveBtn'])){
     }else{
         echo("Not Success");
     }   */
+    $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     header("location:./event_inside.php");
 } 
+
+
+
+
+//inside event delete
+
+
+
+
+
+
 if(isset($_POST['eventDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM inside WHERE id='$edit_id'";
@@ -215,6 +243,15 @@ if(isset($_POST['eventDeleteBtn'])){
     $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
     header("Location:./event_inside.php");
 } 
+
+
+
+
+//outside event
+
+
+
+
 if(isset($_POST['outeventSaveBtn'])){
     $title = $_POST['title'];
     $fromplace = $_POST['fromplace'];
@@ -243,6 +280,7 @@ if(isset($_POST['outeventSaveBtn'])){
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
+       
     }else{
         $msg = "Failed to upload image";
     }
@@ -252,11 +290,21 @@ if(isset($_POST['outeventSaveBtn'])){
     }else{
         echo("Not Success");
     }   */
+    $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     header("location:./event_outside.php");
 
-}   
+} 
+
+
+
 
 // outside event delete
+
+
+
+
+
+
 if(isset($_POST['outeventDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM outside WHERE id='$edit_id'";
@@ -266,7 +314,16 @@ if(isset($_POST['outeventDeleteBtn'])){
 
     header("Location:./event_outside.php");
 }
+
+
+
+
 //gallery inside
+
+
+
+
+
 if(isset($_POST['insidegalleryBtn'])){
     // Get image name
     $msg = "";
@@ -288,12 +345,22 @@ if(isset($_POST['insidegalleryBtn'])){
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
+        $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     }else{
         $msg = "Failed to upload image";
+        $_SESSION['status']='<p style="color: red;">Failed to upload image</p>';
     }
 
     header("Location:./gallery_inside.php");
 }
+
+
+
+
+//gallery outside
+
+
+
 if(isset($_POST['outsidegalleryBtn'])){
     // Get image name
     $msg = "";
@@ -315,11 +382,47 @@ if(isset($_POST['outsidegalleryBtn'])){
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
+        $_SESSION['status']='<p style="color: green;">SuccessFully added</p>';
     }else{
         $msg = "Failed to upload image";
     }
 
     header("Location:./gallery_outside.php");
+}
+
+
+
+
+
+//gallery inside delete
+
+
+
+
+
+if(isset($_POST['galleryinDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM galleryin WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+ header("Location:./gallery_inside.php");
+}
+
+
+
+
+
+//gallery outside delete
+
+
+
+if(isset($_POST['galleryoutDeleteBtn'])){
+    $edit_id = $_POST['editid'];
+    $equery="DELETE FROM galleryout WHERE id='$edit_id'";
+    $equery_run=mysqli_query($connection,$equery);
+    header("Location:./gallery_outside.php");
+    $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
+
 }
 
 

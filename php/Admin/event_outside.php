@@ -141,7 +141,8 @@ $tr = mysqli_query($connection,$tq);
                                             <th>Date</th>
                                             <th>Time</th>
                                             <th>Price</th>
-                                            <th>Image</th>
+                                            <th>Image Name</th>
+                                            <th>Image Preview</th>
                                             <th>Image Description</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -169,6 +170,10 @@ $tr = mysqli_query($connection,$tq);
                                                <td><?php echo($row['time']);?></td>
                                                <td><?php echo($row['price']);?></td>
                                                <td><?php echo($row['image']);?></td>
+                                               <td>
+                                               <?php $image_path = $row['image']; ?>
+                                               <img src="/php/Admin/images/outside/<?php echo $image_path;?>" width="170" height="100">
+                                               </td>
                                                <td><?php echo($row['image_text']);?></td>
                                                <td><button class="btn btn-primary">Edit</button></td>
                                                <td>
