@@ -152,7 +152,7 @@ $tr = mysqli_query($connection,$tq);
                                   <tbody>
                                   <?php
                                        
-                                       if(mysqli_num_rows($tr)>0)
+                                     if(mysqli_num_rows($tr)>0)
                                        {
 
                                            while($row = mysqli_fetch_assoc($tr))
