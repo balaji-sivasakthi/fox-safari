@@ -266,8 +266,61 @@ if(isset($_POST['outeventDeleteBtn'])){
 
     header("Location:./event_outside.php");
 }
+//gallery inside
+if(isset($_POST['insidegalleryBtn'])){
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
 
+    // image file directory
+    $target = "gallery/inside/".basename($image);
 
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $inside_query = " INSERT INTO galleryin ( image, image_text) VALUES ('$image', '$image_text')";
+    $inside_query_run = mysqli_query($connection,$inside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+
+    header("Location:./gallery_inside.php");
+}
+if(isset($_POST['outsidegalleryBtn'])){
+    // Get image name
+    $msg = "";
+    $image_text = $_POST['image_text'];
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($connection, $image_text);
+
+    // image file directory
+    $target = "gallery/outside/".basename($image);
+
+  //  $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    
+//$result = mysqli_query($db, "SELECT * FROM images");
+    $outside_query = " INSERT INTO galleryout ( image, image_text) VALUES ('$image', '$image_text')";
+    $outside_query_run = mysqli_query($connection,$outside_query);
+  //  mysqli_query($connection, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+
+    header("Location:./gallery_outside.php");
+}
 
 
 ?>

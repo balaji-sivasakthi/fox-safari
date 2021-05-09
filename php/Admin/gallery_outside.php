@@ -36,13 +36,18 @@ include('./includes/header.php'); ?>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="./code.php" method="POST">
-
+      <form action="./code.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="size" value="1000000">
         <div class="modal-body">
 
 
-                 <div class="form-group">
-                <input type="file" accept="image/*" name="gallery_inside" >
+                <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" accept="image/*" name="image" id="image" class="form-control" placeholder="" >           
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Description</label>
+                    <input type="text" name="image_text" id="image_text" class="form-control" placeholder="" >
                 </div>
                 
                   
@@ -51,7 +56,7 @@ include('./includes/header.php'); ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="submit" name="outsidegalleryBtn" class="btn btn-primary">Save</button>
         </div>
       </form>
 
@@ -61,7 +66,7 @@ include('./includes/header.php'); ?>
 
 <?php
 
-$tq="SELECT * FROM admin";
+$tq="SELECT * FROM galleryout";
 $tr = mysqli_query($connection,$tq);
 
 ?>
