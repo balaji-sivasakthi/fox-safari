@@ -308,7 +308,17 @@ if(isset($_POST['outeventSaveBtn'])){
 if(isset($_POST['outeventDeleteBtn'])){
     $edit_id = $_POST['editid'];
     $equery="DELETE FROM outside WHERE id='$edit_id'";
+    $es="SELECT *FROM outside WHERE id='$edit_id'";
+    $es_r=mysqli_query($connection,$es);
+    while($row = mysqli_fetch_assoc($es_r))
+    {
+        $path="/php/Admin/images/inside/".$image_path;
+        unlink($path);
+        
+
+    }
     $equery_run=mysqli_query($connection,$equery);
+
     $_SESSION['status']='<p style="color: green;">SuccessFully Deleted</p>';
 
 
