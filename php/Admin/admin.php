@@ -140,7 +140,7 @@ $tr = mysqli_query($connection,$tq);
                                                <td><?php echo($row['email']);?></td>
                                                <td><?php echo($row['pass']);?></td>
                                                <td>
-                                                    <form action="edit_user.php" method="post">
+                                                    <form action="edit_admin.php" method="post">
                                                     <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
                                                     <button type="submit" name="adminEditBtn" class="btn btn-primary">Edit</button>
                                                     </form>
