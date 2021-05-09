@@ -1,6 +1,8 @@
 <?php include('./includes/header.php') ?>
 <?php include('./includes/navbar.php') ?>
 <?php include('../Admin/Database/dbconfig.php')?>
+
+<link href="css/magnific-popup.css" rel="stylesheet">
   
 
         <!-- Content Wrapper -->

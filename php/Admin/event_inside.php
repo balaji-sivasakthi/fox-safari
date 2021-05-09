@@ -10,6 +10,15 @@ include('./includes/header.php'); ?>
 <!-- Main Content -->
             <div id="content">
 
+<!-- stylesheet -->
+ <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/fontawesome-all.css" rel="stylesheet">
+  <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">           
+
                
 <?php include('./includes/top-bar.php');?>
 
@@ -173,7 +182,8 @@ $tr = mysqli_query($connection,$tq);
                                                <td><?php echo($row['image']);?></td>
                                                <td>
                                                <?php $image_path = $row['image']; ?>
-                                               <img src="/php/Admin/images/inside/<?php echo $image_path;?>" width="170" height="100">
+                                               <!-- Dclareation of picture -->
+                                               <img src="/php/Admin/images/inside/<?php echo $image_path;?>" width="200" height="100">
                                                </td>
                                                <td><?php echo($row['image_text']);?></td>
                                                <td><button class="btn btn-primary">Edit</button></td>

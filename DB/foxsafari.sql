@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 05:18 AM
+-- Generation Time: May 09, 2021 at 08:56 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -41,21 +41,45 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `user`, `pass`, `email`, `time`) VALUES
 (1, 'balaji', 'balaji', 'balajisivasakthi2020@gmail.com', '2021-05-02 20:59:52'),
-(2, '11', 'balaji', 'balaji@gmail.com', '2021-05-02 20:59:52'),
-(3, 'n', 'balaji', 'sivasakthi7772@gmail.com', '2021-05-02 20:59:52'),
-(5, 'ddd', 'karthikeyan', 'karthi@gmail.com', '2021-05-02 20:59:52');
+(12, 'karthikeyamofficl', 'ed7bb817085e119815490462d29d8798', 'karthiramesh56@gmail.com', '2021-05-08 23:32:29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery`
+-- Table structure for table `galleryin`
 --
 
-CREATE TABLE `gallery` (
-  `id` int(100) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  `path` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `galleryin` (
+  `id` int(225) NOT NULL,
+  `image` varchar(225) NOT NULL,
+  `image_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galleryin`
+--
+
+INSERT INTO `galleryin` (`id`, `image`, `image_text`) VALUES
+(4, 'download.jpg', 'this is the image with beautiful background');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galleryout`
+--
+
+CREATE TABLE `galleryout` (
+  `id` int(225) NOT NULL,
+  `image` varchar(225) NOT NULL,
+  `image_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galleryout`
+--
+
+INSERT INTO `galleryout` (`id`, `image`, `image_text`) VALUES
+(5, 'hari1.PNG', 'wow what a beauty');
 
 -- --------------------------------------------------------
 
@@ -66,21 +90,21 @@ CREATE TABLE `gallery` (
 CREATE TABLE `inside` (
   `id` int(100) NOT NULL,
   `title` varchar(225) NOT NULL,
-  `from-place` varchar(225) NOT NULL,
-  `to-place` varchar(225) NOT NULL,
+  `fromplace` varchar(225) NOT NULL,
+  `toplace` varchar(225) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
   `price` int(225) NOT NULL,
-  `done-time` date NOT NULL DEFAULT current_timestamp(),
-  `image` point NOT NULL
+  `image` varchar(225) NOT NULL,
+  `image_text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `inside`
 --
 
-INSERT INTO `inside` (`id`, `title`, `from-place`, `to-place`, `date`, `time`, `price`, `done-time`, `image`) VALUES
-(3, 'New Event', 'covaI', 'CHENNAI', '2021-05-07', '19:40:36', 5000, '0000-00-00', 0x);
+INSERT INTO `inside` (`id`, `title`, `fromplace`, `toplace`, `date`, `time`, `price`, `image`, `image_text`) VALUES
+(18, 'karthikeyan', 'ooty', 'kodaikanal', '5555-05-05', '05:55:00', 5555, 'download.jpg', 'see it');
 
 -- --------------------------------------------------------
 
@@ -91,15 +115,21 @@ INSERT INTO `inside` (`id`, `title`, `from-place`, `to-place`, `date`, `time`, `
 CREATE TABLE `outside` (
   `id` int(100) NOT NULL,
   `title` varchar(225) NOT NULL,
-  `from-place` varchar(225) NOT NULL,
-  `to-place` varchar(225) NOT NULL,
+  `fromplace` varchar(225) NOT NULL,
+  `toplace` varchar(225) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
   `price` int(225) NOT NULL,
-  `done-time` date NOT NULL DEFAULT current_timestamp(),
-  `image` point NOT NULL
+  `image` varchar(225) NOT NULL,
+  `image_text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `outside`
+--
+
+INSERT INTO `outside` (`id`, `title`, `fromplace`, `toplace`, `date`, `time`, `price`, `image`, `image_text`) VALUES
+(18, 'hello', 'kk', 'dp', '6666-06-06', '06:06:00', 66666, 'Emoji Meanings Dictionary List _ App Price Drops.png', 'wowowowwo');
 
 -- --------------------------------------------------------
 
@@ -121,9 +151,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `phone`, `email`, `password`, `time`) VALUES
-(1, 'kkkk', 2147483647, 'kkk@gmail.com', 'karthikeyan', '2021-05-03 03:55:55'),
-(2, 'gsfhgadfg', 24134235, 'dfhadfhadffgnhsfg@gmail.opcm', 'fbadfbadfb', '2021-05-03 03:55:55'),
-(3, 'hell', 44444444441, 'karthiramesh56ss@gmail.com', '0b4e7a0e5fe84ad35fb5f95b9ceeac79', '2021-05-03 04:58:45');
+(1, 'kkkk', 2147483647, 'kkk@gmail.com', 'karthikeyan', '2021-05-03 03:55:55');
 
 --
 -- Indexes for dumped tables
@@ -138,15 +166,27 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `gallery`
+-- Indexes for table `galleryin`
 --
-ALTER TABLE `gallery`
+ALTER TABLE `galleryin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `galleryout`
+--
+ALTER TABLE `galleryout`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `inside`
 --
 ALTER TABLE `inside`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `outside`
+--
+ALTER TABLE `outside`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -163,19 +203,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `gallery`
+-- AUTO_INCREMENT for table `galleryin`
 --
-ALTER TABLE `gallery`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `galleryin`
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `galleryout`
+--
+ALTER TABLE `galleryout`
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `inside`
 --
 ALTER TABLE `inside`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `outside`
+--
+ALTER TABLE `outside`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user`
