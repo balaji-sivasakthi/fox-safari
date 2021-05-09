@@ -183,10 +183,35 @@ $tr = mysqli_query($connection,$tq);
                                                <td>
                                                <?php $image_path = $row['image']; ?>
                                                <!-- Dclareation of picture -->
-                                               <img src="/php/Admin/images/inside/<?php echo $image_path;?>" width="200" height="100">
+
+                                               
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="image-preview" tabindex="-1" aria-labelledby="image-preview" aria-hidden="true">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <h5 class="modal-title" id="image-preview">Image Preview</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                          </div>
+                                                          <div class="modal-body">
+                                                            <img style="width: 100%; height:100%" src="/php/Admin/images/inside/<?php echo $image_path;?>" alt="">
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                              <img style="cursor: pointer;" data-toggle="modal" data-target="#image-preview"  src="/php/Admin/images/inside/<?php echo $image_path;?>" width="200" height="100">
                                                </td>
                                                <td><?php echo($row['image_text']);?></td>
-                                               <td><button class="btn btn-primary">Edit</button></td>
+
+
+
+
+
+                                               <td><button  class="btn btn-primary ">Edit</button></td>
                                                <td>
                                                 <form action="code.php" method="post">
                                                     <input type="hidden" name="editid" value="<?php echo($row['id']);?>" > 
@@ -213,6 +238,9 @@ $tr = mysqli_query($connection,$tq);
 
       </div>
       <!-- /.container-fluid -->
+
+<!-- Button trigger modal -->
+
 
   </div>
   <!-- End of Main Content -->
