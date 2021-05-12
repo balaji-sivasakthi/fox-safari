@@ -17,12 +17,13 @@ $login_query_run=mysqli_query($connection,$login_query);
                 echo("Success");
               
                 $_SESSION['log']="Balaji";
+                
 
             }else{
                 $_SESSION['status']="User Name and Password inVaild";
                 echo("Not Success");
             }
-header("location: ./index.php");
+header("location: ./error.html");
 }
 
 
@@ -44,10 +45,19 @@ if(isset($_POST['rgtUser'])){
         header("Location:/index.php");
 
     }else{
+        if{
+            $phone_query = "SELECT * FROM user WHERE phone ='$phone'";
+            $phone_run= mysqli_query($connection,$phone_query);
+            if(mysqli_num_rows($phone_run)>0){    
+                $_SESSION['log']="phone number already Taken. Please Try Another one.";
+                $_SESSION['log-code']="error";
+                header("Location:/index.php");
+        }
+        }
 
         if($password===$cpassword){
 
-            $insert_query="INSERT INTO user  (name,phone,email,password) VALUES('$user','$phone','$email','$hash_password')";
+            $insert_query="INSERT INTO user (name,phone,email,password) VALUES('$user','$phone','$email','$hash_password')";
             $insert_run=mysqli_query($connection,$insert_query);
 
             if($insert_run){
